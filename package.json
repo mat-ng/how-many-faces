@@ -1,0 +1,23 @@
+{
+  "name": "how-many-faces",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --prefix client",
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "start": "node server/src/server.js",
+    "heroku-postbuild": "npm install --prefix client && npm install --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
