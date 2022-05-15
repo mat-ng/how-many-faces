@@ -1,14 +1,25 @@
 import React, { useRef, useState, useEffect } from 'react'
-import * as tf from '@tensorflow/tfjs'
-
+import axios from 'axios'
 import * as blazeface from '@tensorflow-models/blazeface'
+import * as tf from '@tensorflow/tfjs'
+import regeneratorRuntime from 'regenerator-runtime'
+
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogTitle from '@mui/material/DialogTitle'
 import drawRectangle from '../utilities/drawRectangle'
 import IsMobileBrowser from '../hooks/IsMobileBrowser.jsx'
-import regeneratorRuntime from 'regenerator-runtime'
+import SendToMobileIcon from '@mui/icons-material/SendToMobile'
+import TextField from '@mui/material/TextField'
 import Webcam from 'react-webcam'
+
+const API_URL = process.env.API_URL
+
 
 const FaceSensor = () => {
   const [attendees, setAttendees] = useState(0)
+  const [contactDialogOpen, setContactDialogOpen] = useState(false)
 
   const webcamRef = useRef(null)
   const canvasRef = useRef(null)
@@ -45,8 +56,36 @@ const FaceSensor = () => {
     }
   }
 
+  const renderContactDialog = () => {
+    const [phone, setPhone] = useState('')
+    
+    const closeContactDialog = () => {
+      setContactDialogOpen(false)
+    }
+
+    const handleSend = () => {
+      axios.post(API_URL + '/send', { phone: phone, attendees: attendees })
+      setContactDialogOpen(false)
+    }
+
+    return (
+      <Dialog open={contactDialogOpen} onClose={closeContactDialog}>
+        <DialogTitle style={{fontFamily: 'Trebuchet MS', fontSize: 23}}>Send yourself attendance report</DialogTitle>
+        <div style={{padding: '0px 25px 30px', marginTop: -15}}>
+          <p style={{fontFamily: 'Trebuchet MS', fontSize: 17, marginTop: 17}}>Phone Number</p>
+          <TextField onChange={e => setPhone(e.target.value)} placeholder='Enter phone number here' style={{backgroundColor: '#FFFFFF', width: '100%', marginTop: -8}} />
+        </div>
+        <DialogActions style={{padding: '0px 10px 20px'}}>
+            <Button onClick={handleSend} variant='contained'>Send</Button>
+            <Button onClick={closeContactDialog} variant='outlined'>Cancel</Button>
+          </DialogActions>
+      </Dialog>
+    )
+  }
+
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+      {renderContactDialog()}
       { IsMobileBrowser() ?
           (typeof webcamRef.current === 'undefined' || webcamRef.current === null || webcamRef.current.video.readyState !== 4) ?
             <div>
@@ -54,7 +93,10 @@ const FaceSensor = () => {
               <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 18, marginLeft: 10, marginRight: 10, textAlign: 'center', width: 200}}>Please make sure your webcam is working and your browser has permission to use it.</h1>
             </div>
             :
-            <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, textAlign: 'center', marginBottom: 300}}>{attendees} attending</h1>
+            <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, textAlign: 'center', marginBottom: 300}}>
+              {attendees} attending
+              <Button onClick={() => setContactDialogOpen(true)} style={{marginLeft: '10px'}}><SendToMobileIcon/></Button>
+            </h1>
           :
           (typeof webcamRef.current === 'undefined' || webcamRef.current === null || webcamRef.current.video.readyState !== 4) ?
             <div>
@@ -62,7 +104,10 @@ const FaceSensor = () => {
               <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, marginLeft: 10, marginRight: 10, textAlign: 'center', width: 600}}>Please make sure your webcam is working and your browser has permission to use it.</h1>
             </div>
             :
-            <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, textAlign: 'center', marginBottom: 600}}>{attendees} attending</h1>
+            <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, textAlign: 'center', marginBottom: 600}}>
+              {attendees} attending
+              <Button onClick={() => setContactDialogOpen(true)} style={{marginLeft: '10px'}}><SendToMobileIcon/></Button>
+            </h1>
       }
 
       <Webcam
