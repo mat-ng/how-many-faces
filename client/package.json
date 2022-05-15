@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@tensorflow-models/blazeface": "^0.0.7",
+    "@tensorflow/tfjs": "^3.17.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-webcam": "^7.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
