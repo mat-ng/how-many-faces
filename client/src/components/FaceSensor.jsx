@@ -70,9 +70,9 @@ const FaceSensor = () => {
 
     return (
       <Dialog open={contactDialogOpen} onClose={closeContactDialog}>
-        <DialogTitle style={{fontFamily: 'Trebuchet MS', fontSize: 23}}>Send yourself attendance report</DialogTitle>
+        <DialogTitle style={{fontFamily: 'Trebuchet MS', fontSize: 20}}>Send yourself the attendance report</DialogTitle>
         <div style={{padding: '0px 25px 30px', marginTop: -15}}>
-          <p style={{fontFamily: 'Trebuchet MS', fontSize: 17, marginTop: 17}}>Phone Number</p>
+          <p style={{fontFamily: 'Trebuchet MS', fontSize: 15, marginTop: 17}}>Phone Number</p>
           <TextField onChange={e => setPhone(e.target.value)} placeholder='Enter phone number here' style={{backgroundColor: '#FFFFFF', width: '100%', marginTop: -8}} />
         </div>
         <DialogActions style={{padding: '0px 10px 20px'}}>
