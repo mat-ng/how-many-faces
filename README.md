@@ -2,7 +2,7 @@
 
 The app can be accessed [here](https://how-many-faces.herokuapp.com).
 
-How Many Faces is a fullstack web application that offers a new way for teachers to take attendance of their classes. They simply need to point their device's camera towards their class, then the app will detect the number of human faces and send the user an SMS with the attendance report.
+How Many Faces is a fullstack web application that offers a new way for teachers to take attendance of their classes. They simply need to point their device's camera towards their class, then the app will detect the number of human faces and send the user an SMS with an attendance report.
 
 The site was created using TensorFlow to detect peoples' faces and the [Twilio API](https://www.twilio.com) to send users SMS messages with their attendance reports.
 
@@ -10,15 +10,15 @@ The site was created using TensorFlow to detect peoples' faces and the [Twilio A
 
 While in class, I often noticed that teachers waste a significant portion of their time taking attendance of their students. I understood that this process was important to ensure that students regularly attend class, but I believed that it could be optimized.
 
-This lead to my idea of How Many Faces. By having users simply point their device's camera towards their classroom to determine how many students are currently attending, this process would be hugely optimized and reduce any time wasted.
+This lead to my idea of How Many Faces. By having users simply point their device's camera towards their classroom to determine how many students are currently attending, this process would be hugely optimized and reduce time wasted.
 
 ## Goals
 
 After getting inspired, I developed 2 main goals for this app:
 
-1. How Many Faces should be able to detect human faces with high accuracy, so users receive accurate attendance reports.
+1. How Many Faces should be able to detect human faces with high accuracy, so teachers receive accurate attendance reports.
 
-2. How Many Faces should offer a way for users to save their attendance reports, so they can refer back to previous reports and compare numbers.
+2. How Many Faces should offer a way for users to receive a copy of their attendance reports, so they can refer back to previous reports and compare numbers.
 
 ## Development
 
