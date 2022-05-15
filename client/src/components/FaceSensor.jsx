@@ -37,7 +37,6 @@ const FaceSensor = () => {
 
   const detectFaces = async (net) => {
     if ( typeof webcamRef.current !== 'undefined' && webcamRef.current !== null && webcamRef.current.video.readyState === 4 ) {
-
       const video = webcamRef.current.video
       const videoWidth = webcamRef.current.video.videoWidth
       const videoHeight = webcamRef.current.video.videoHeight
