@@ -2,7 +2,7 @@
 
 The app can be accessed [here](https://how-many-faces.herokuapp.com).
 
-How Many Faces is a fullstack web application that offers a new way for teachers to take attendance of their classes. They simply need to point their device's camera towards their class, then the app will detect the number of peoples' faces and send the user an SMS with the attendance report.
+How Many Faces is a fullstack web application that offers a new way for teachers to take attendance of their classes. They simply need to point their device's camera towards their class, then the app will detect the number of human faces and send the user an SMS with the attendance report.
 
 The site was created using TensorFlow to detect peoples' faces and the [Twilio API](https://www.twilio.com) to send users SMS messages with their attendance reports.
 
