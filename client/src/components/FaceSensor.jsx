@@ -88,8 +88,7 @@ const FaceSensor = () => {
       { IsMobileBrowser() ?
           (typeof webcamRef.current === 'undefined' || webcamRef.current === null || webcamRef.current.video.readyState !== 4) ?
             <div>
-              <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 18, textAlign: 'center', width: 200}}>Please wait, your webcam is loading...</h1>
-              <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 18, marginLeft: 10, marginRight: 10, textAlign: 'center', width: 200}}>Please make sure your webcam is working and your browser has permission to use it.</h1>
+              <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 15, textAlign: 'center', width: 100}}>Please wait, your webcam is loading...</h1>
             </div>
             :
             <h1 style={{fontFamily: 'Trebuchet MS', fontSize: 22, textAlign: 'center', marginBottom: 300}}>
