@@ -1,4 +1,5 @@
 # How Many Faces
+![Project Banner](client/src/assets/Poster.jpg)
 
 The app can be accessed [here](https://how-many-faces.herokuapp.com).
 
@@ -31,6 +32,10 @@ After that, I coded the front-end in React. I leveraged the React Webcam library
 ## Final Result
 
 How Many Faces can be accessed [here](https://how-many-faces.herokuapp.com).
+
+<p align="center">
+  <img src="client/src/assets/FinalResult.jpg" width="500" />
+</p>
 
 ## License
 
