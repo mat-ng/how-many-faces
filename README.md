@@ -2,31 +2,31 @@
 
 The app can be accessed [here](https://how-many-faces.herokuapp.com).
 
-How Many Faces is a fullstack web application for teachers/event organizers to take attendance of their participants. They simply need to point their device's camera towards a group, then the app will detect the number of peoples' faces and send the user a text with the attendance report.
+How Many Faces is a fullstack web application that offers a new way for teachers to take attendance of their classes. They simply need to point their device's camera towards their class, then the app will detect the number of peoples' faces and send the user an SMS with the attendance report.
 
-The site was created using TensorFlow to detect peoples' faces and the [Twilio API](https://www.twilio.com) to text users their attendance reports.
+The site was created using TensorFlow to detect peoples' faces and the [Twilio API](https://www.twilio.com) to send users SMS messages with their attendance reports.
 
 ## Inspiration
 
-While in class, I often noticed that teachers waste a significant portion of their time taking attendance of how many people are in class. The same observation applied to event organizers, as well as anyone trying to host a gathering. I understood that this process was important in the context of organizing events, but I believed that it could be optimized.
+While in class, I often noticed that teachers waste a significant portion of their time taking attendance of their students. I understood that this process was important to ensure that students regularly attend class, but I believed that it could be optimized.
 
-This lead to my idea of How Many Faces. By having users simply point their device's camera towards their group to determine attendance numbers, this process would be hugely optimized and reduce any time wasted.
+This lead to my idea of How Many Faces. By having users simply point their device's camera towards their classroom to determine how many students are currently attending, this process would be hugely optimized and reduce any time wasted.
 
 ## Goals
 
 After getting inspired, I developed 2 main goals for this app:
 
-1. How Many Faces should be able to detect faces with high accuracy, so users receive accurate attendance reports.
+1. How Many Faces should be able to detect human faces with high accuracy, so users receive accurate attendance reports.
 
 2. How Many Faces should offer a way for users to save their attendance reports, so they can refer back to previous reports and compare numbers.
 
 ## Development
 
-My first idea was to use TensorFlow to detect faces from the device's camera. As such, I could deploy a convolutional neural network to classify the faces in the images that are uploaded by users. Then, I could display relevant data for the user (how many faces were detected, where the faces are detected, etc.).
+My first idea was to use TensorFlow to detect human faces from the device's camera. As such, I could deploy a convolutional neural network to classify human faces in images uploaded by users. Then, I could display relevant data for the user (how many faces were detected, where the faces are detected, etc.).
 
-My second idea was to use the [Twilio API](https://www.twilio.com) so that users could save their attendance reports. Since Twilio enables the application to send text messages, users would simply need to input their own phone numbers to receive a text of their attendance reports whenever requested. As such, they could access any previous attendance reports on their local devices by checking their text history with Twilio.
+My second idea was to use the [Twilio API](https://www.twilio.com) so that users could receive copies of their attendance reports. Since Twilio enables the application to send SMS messages, teachers would simply need to enter their phone numbers into the app, before the app instantly sends them an SMS of their current attendance.
 
-Then, I coded the front-end in React. I leveraged the React Webcam library to access users' cameras in the application. And in terms of the back-end, I used Express and set up an API endpoint for users to send themselves text messages through the Twilio API.
+After that, I coded the front-end in React. I leveraged the React Webcam library to access users' cameras through the application. Then, I used Express to code the back-end, including an API endpoint for users to send themselves SMS messages through the Twilio API.
 
 ## Final Result
 
