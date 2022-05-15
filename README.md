@@ -1,5 +1,5 @@
 # How Many Faces
-![Project Banner](client/src/assets/Poster.jpg)
+![Project Banner](client/src/assets/Poster.PNG)
 
 The app can be accessed [here](https://how-many-faces.herokuapp.com).
 
