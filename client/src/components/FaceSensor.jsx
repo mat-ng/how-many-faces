@@ -73,6 +73,7 @@ const FaceSensor = () => {
         <div style={{padding: '0px 25px 30px', marginTop: -15}}>
           <p style={{fontFamily: 'Trebuchet MS', fontSize: 15, marginTop: 17}}>Phone Number</p>
           <TextField onChange={e => setPhone(e.target.value)} placeholder='Enter phone number here' style={{backgroundColor: '#FFFFFF', width: '100%', marginTop: -8}} />
+          <p style={{fontFamily: 'Trebuchet MS', fontSize: 13, marginTop: 17}}>(This only works for phone numbers that are verified with this app. Contact m57ng@uwaterloo.ca to verify your phone number.)</p>
         </div>
         <DialogActions style={{padding: '0px 10px 20px'}}>
             <Button onClick={handleSend} variant='contained'>Send</Button>
