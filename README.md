@@ -35,7 +35,7 @@ How Many Faces can be accessed [here](https://how-many-faces.herokuapp.com).
 
 <p align="center">
   <br/>
-  <img src="client/src/assets/Final.PNG" width="500" />
+  <img src="client/src/assets/FinalResult.PNG" width="500" />
 </p>
 
 ## Future Roadmap
